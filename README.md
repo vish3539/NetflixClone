@@ -4,7 +4,7 @@ For some users, While using npx create-react-app to install the modules, it inst
 By using this template,i try to solve that issue. now you can always rest assure that all the modules used in the template will be up-to-date and the most important thing is, it WORKS.!!
 
 #How to use
-1. git clone https://reacttemp your-app-name
+1. git clone https://github.com/vish3539/ReactLatestTemplate.git your-app-name
 2. cd your-app-name
 3. npm install
 4. npm update --save
