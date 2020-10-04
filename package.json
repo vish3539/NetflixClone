@@ -5,16 +5,16 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "@babel/plugin-proposal-decorators": "*",
-    "lodash": "*",
-    "node-sass": "*",
-    "react": "*",
-    "react-dom": "*",
-    "react-scripts": "*",
-    "use-query-params": "^*"
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "lodash": "^4.17.20",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.3",
+    "use-query-params": "^1.1.8"
   },
   "devDependencies": {
-    "typescript": "*"
+    "typescript": "^4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
