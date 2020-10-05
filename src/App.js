@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
+import Jumbotron from './components/jumbotron';
+import jumboData from './fixtures/jumbo.json';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <p >This is Working.Hurrayyyy.!!</p>
-  
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div>
+      <Jumbotron.Container>
+        {jumboData.map(item => (
+          <Jumbotron key={item.id} direction={item.direction}>
+            <Jumbotron.Pane>
+              <Jumbotron.Title>{item.title}</Jumbotron.Title>
+              <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
+            </Jumbotron.Pane>
+            <Jumbotron.Pane>
+              <Jumbotron.Image
+                src={item.image}
+                alt={item.alt}
+              ></Jumbotron.Image>
+            </Jumbotron.Pane>
+          </Jumbotron>
+        ))}
+      </Jumbotron.Container>
+    </div>
+  );
 }
 
 export default App;
