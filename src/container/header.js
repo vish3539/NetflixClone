@@ -3,12 +3,14 @@ import { Header } from '../components';
 import * as ROUTES from '../constants/route';
 import logo from '../logo.svg';
 
-export default function HeaderContainer({ children }) {
+export default function HeaderContainer({ children ,signinTru}, ) {
   return (
-    <Header>
+    <Header >
       <Header.Frame>
         <Header.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
-        <Header.ButtonLink to={ROUTES.SIGN_IN}>Sign In</Header.ButtonLink>
+        {/* <Header.ButtonLink to={ROUTES.SIGN_IN}>Sign In</Header.ButtonLink> */}
+        {signinTru ? '':<Header.ButtonLink to={ROUTES.SIGN_IN}>Sign In</Header.ButtonLink>}
+        
       </Header.Frame>
       {children}
     </Header>
