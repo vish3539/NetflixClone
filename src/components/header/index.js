@@ -5,6 +5,11 @@ import {
   Background,
   ButtonLink,
   Logo,
+  Feature,
+  Text,
+  FeatureCallOut,
+  Link,
+  Group
 } from './styles/header';
 
 function Header({ bg = true, children, ...restProps }) {
@@ -18,6 +23,18 @@ function Header({ bg = true, children, ...restProps }) {
 }
 
 export default Header;
+
+Header.Feature = function HeaderFeature({ children, ...restProps }) {
+  return <Feature>{children}</Feature>;
+};
+
+Header.FeatureCallOut = function HeaderFeatureCallOut({ children, ...restProps }) {
+  return <FeatureCallOut {...restProps}>{children}</FeatureCallOut>;
+};
+
+Header.Text = function HeaderText({ children, ...restProps }) {
+  return <Text {...restProps}>{children}</Text>;
+};
 
 Header.Frame = function HeaderFrame({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -35,9 +52,13 @@ Header.ButtonLink = function HeaderButtonLink({ children, ...restProps }) {
   return <ButtonLink {...restProps}>{children}</ButtonLink>;
 };
 
-// Header.Group = function HeaderGroup({ children, ...restProps }) {
-//   return <Group {...restProps}>{children}</Group>;
-// };
+Header.TextLink = function HeaderTextLink({ children, ...restProps }) {
+  return <Link {...restProps}>{children}</Link>;
+};
+
+Header.Group = function HeaderGroup({ children, ...restProps }) {
+  return <Group {...restProps}>{children}</Group>;
+};
 
 // Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps }) {
 //   const [searchActive, setSearchActive] = useState(false);
@@ -62,9 +83,7 @@ Header.ButtonLink = function HeaderButtonLink({ children, ...restProps }) {
 //   return <Profile {...restProps}>{children}</Profile>;
 // };
 
-// Header.Feature = function HeaderFeature({ children, ...restProps }) {
-//   return <Feature>{children}</Feature>;
-// };
+
 
 // Header.Picture = function HeaderPicture({ src, ...restProps }) {
 //   return <Picture {...restProps} src={`/images/users/${src}.png`} />;
@@ -74,18 +93,12 @@ Header.ButtonLink = function HeaderButtonLink({ children, ...restProps }) {
 //   return <Dropdown {...restProps}>{children}</Dropdown>;
 // };
 
-// Header.TextLink = function HeaderTextLink({ children, ...restProps }) {
-//   return <Link {...restProps}>{children}</Link>;
-// };
+
 
 // Header.PlayButton = function HeaderPlayButton({ children, ...restProps }) {
 //   return <PlayButton {...restProps}>{children}</PlayButton>;
 // };
 
-// Header.FeatureCallOut = function HeaderFeatureCallOut({ children, ...restProps }) {
-//   return <FeatureCallOut {...restProps}>{children}</FeatureCallOut>;
-// };
 
-// Header.Text = function HeaderText({ children, ...restProps }) {
-//   return <Text {...restProps}>{children}</Text>;
-// };
+
+
