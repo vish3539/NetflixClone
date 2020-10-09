@@ -5,6 +5,7 @@ import { Card, Loading, Header, Player } from '../components';
 import logo from '../logo.svg';
 import * as ROUTES from '../constants/route';
 import { FooterContainer } from './footer';
+import Fuse from 'fuse.js';
 
 export function BrowserContainer({ slides }) {
   const [category, setCategory] = useState('series');
@@ -24,6 +25,23 @@ export function BrowserContainer({ slides }) {
   useEffect(() => {
     setSlideRows(slides[category]);
   }, [slides, category]);
+
+  useEffect(() => {
+    // if the searchTerm changes, we need to serch, so this should fire
+    const fuse = new Fuse(slideRows, {
+      keys: ['data.description', 'data.title', 'data.genre'],
+    });
+    const results = fuse.search(searchTerm).map(({item})=>{
+      return item;
+    })
+    if(slideRows.length>0 && searchTerm.length>3 && results.length>0){
+      setSlideRows(results);
+    }else{
+      setSlideRows(slides[category]);
+    }
+  }, [searchTerm]);
+
+ 
 
   return profile.displayName ? (
     <>

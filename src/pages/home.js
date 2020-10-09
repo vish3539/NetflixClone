@@ -4,6 +4,7 @@ import { FooterContainer } from '../container/footer';
 import FaqsContainer from '../container/faq';
 import HeaderContainer from '../container/header';
 import { OptForm, Feature } from '../components';
+import * as ROUTES from '../constants/route';
 
 function Home() {
   return (
@@ -14,7 +15,7 @@ function Home() {
           <Feature.SubTitle>Watch anywhere. Cancel anytime.</Feature.SubTitle>
           <OptForm>
             <OptForm.Input placeholder="Email address" />
-            <OptForm.Button>Get Started</OptForm.Button>
+            <OptForm.Button to={ROUTES.SIGN_UP}>Get Started</OptForm.Button>
             <OptForm.Break />
             <OptForm.Text>
               Ready to watch? Enter your email to create or restart your

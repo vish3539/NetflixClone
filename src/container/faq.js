@@ -16,7 +16,9 @@ function FaqsContainer() {
       </Accordion.Frame>
 
       <OptForm>
-        <OptForm.Input placeholder="Email address" />
+        <OptForm.Input
+          placeholder="Email address"
+        />
         <OptForm.Button>Try it now</OptForm.Button>
         <OptForm.Break />
         <OptForm.Text>
